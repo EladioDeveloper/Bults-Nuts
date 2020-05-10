@@ -8,8 +8,6 @@ namespace Practica_1
         {
             Ejercicio_2 ejercicio2 = new Ejercicio_2();
             ejercicio2.play();
-            //StackDummy stack = new StackDummy();
-            //stack.Play();
         }
     }
 }
