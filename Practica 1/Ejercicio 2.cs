@@ -9,41 +9,35 @@ namespace Practica_1
         {
             Stack<string> stack = new Stack<string>();
             string[] array;
-            while (true) 
+            while (true)
             {
-                while (true)
+                Console.Clear();
+                Console.Write("Inserte los valores separados por ',': ");
+                array = Console.ReadLine().Split(',');
+
+                if (array.Length % 2 == 0)
                 {
-                    Console.Clear();
-                    Console.Write("Inserte los valores separados por ',': ");
-                    array = Console.ReadLine().Split(',');
-
-                    if (array.Length % 2 == 0)
+                    foreach (var item in array)
                     {
-                        foreach (var item in array)
-                        {
-                            stack.Push(item);
-                        }
-                        var lists = Divide(stack);
-                        var matching = Matching(lists);
-                        foreach (var item in matching)
-                        {
-                            Console.Write($"{item}, ");
-                        }
-                        Console.ReadKey();
-                        break;
-
+                        stack.Push(item);
                     }
-                    else
+                    var lists = Divide(stack);
+                    var matching = Matching(lists);
+                    foreach (var item in matching)
                     {
-                        Console.WriteLine("Inserte valores parejos, para N tornillos, N tuercas.");
-                        Console.ReadKey();
+                        Console.Write($"{item}, ");
                     }
-                    
+                    Console.ReadKey();
+                    break;
+
+                }
+                else
+                {
+                    Console.WriteLine("Inserte valores parejos, para N tornillos, N tuercas.");
+                    Console.ReadKey();
                 }
             }
-
         }
-
         public List<Stack<string>> Divide(Stack<string> stack)
         {
             List<Stack<string>> Lists = new List<Stack<string>>();
@@ -106,7 +100,6 @@ namespace Practica_1
             }
             return returnedStack;
         }
-
         public Stack<string> SelfSearch(Stack<string> stack)
         {
             Stack<string> returnedStack = new Stack<string>();
@@ -139,47 +132,6 @@ namespace Practica_1
             }
             return returnedStack;
         }
-
-        //public bool Validate(Stack<string> stack)
-        //{
-        //    Stack<string> vstack = new Stack<string>();
-        //    foreach (var item in stack)
-        //    {
-        //        vstack.Push(item);
-        //    }
-        //    var findItem = vstack.Pop();
-        //    int size = vstack.Count;
-        //    int count = 0;
-        //    Stack<string> tempStack = new Stack<string>();
-        //    for(int i = 0; i < size; i++)
-        //    {
-        //        if (vstack.Count > 0)
-        //        {
-        //            if (findItem == vstack.Peek())
-        //            {
-        //                vstack.Pop();
-        //                if (vstack.Count != 0)
-        //                {
-        //                    findItem = vstack.Pop();
-        //                }
-        //                count++;
-        //            }
-        //            else if (vstack.Count == 1)
-        //            {
-        //                return false;
-        //            }
-        //            else
-        //            {
-        //                tempStack.Push(vstack.Pop());
-        //            }
-        //        }
-        //    }
-
-        //    if (count >= size / 2)
-        //        return true;
-        //    else
-        //        return false;
-        //}
     }
 }
  
