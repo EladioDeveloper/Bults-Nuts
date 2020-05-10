@@ -1,14 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Transactions;
-using System.Xml.Serialization;
 
 namespace Practica_1
 {
@@ -17,8 +8,6 @@ namespace Practica_1
         public void play()
         {
             Stack<string> stack = new Stack<string>();
-            Stack<string> dummyStack = new Stack<string>();
-            List<Stack<string>> stackList = new List<Stack<string>>();
             string[] array;
             while (true) 
             {
@@ -53,47 +42,6 @@ namespace Practica_1
                 }
             }
 
-        }
-
-        public bool Validate(Stack<string> stack)
-        {
-            Stack<string> vstack = new Stack<string>();
-            foreach (var item in stack)
-            {
-                vstack.Push(item);
-            }
-            var findItem = vstack.Pop();
-            int size = vstack.Count;
-            int count = 0;
-            Stack<string> tempStack = new Stack<string>();
-            for(int i = 0; i < size; i++)
-            {
-                if (vstack.Count > 0)
-                {
-                    if (findItem == vstack.Peek())
-                    {
-                        vstack.Pop();
-                        if (vstack.Count != 0)
-                        {
-                            findItem = vstack.Pop();
-                        }
-                        count++;
-                    }
-                    else if (vstack.Count == 1)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        tempStack.Push(vstack.Pop());
-                    }
-                }
-            }
-
-            if (count >= size / 2)
-                return true;
-            else
-                return false;
         }
 
         public List<Stack<string>> Divide(Stack<string> stack)
@@ -191,6 +139,47 @@ namespace Practica_1
             }
             return returnedStack;
         }
+
+        //public bool Validate(Stack<string> stack)
+        //{
+        //    Stack<string> vstack = new Stack<string>();
+        //    foreach (var item in stack)
+        //    {
+        //        vstack.Push(item);
+        //    }
+        //    var findItem = vstack.Pop();
+        //    int size = vstack.Count;
+        //    int count = 0;
+        //    Stack<string> tempStack = new Stack<string>();
+        //    for(int i = 0; i < size; i++)
+        //    {
+        //        if (vstack.Count > 0)
+        //        {
+        //            if (findItem == vstack.Peek())
+        //            {
+        //                vstack.Pop();
+        //                if (vstack.Count != 0)
+        //                {
+        //                    findItem = vstack.Pop();
+        //                }
+        //                count++;
+        //            }
+        //            else if (vstack.Count == 1)
+        //            {
+        //                return false;
+        //            }
+        //            else
+        //            {
+        //                tempStack.Push(vstack.Pop());
+        //            }
+        //        }
+        //    }
+
+        //    if (count >= size / 2)
+        //        return true;
+        //    else
+        //        return false;
+        //}
     }
 }
  

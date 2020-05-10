@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
 
 namespace Practica_1
 {
