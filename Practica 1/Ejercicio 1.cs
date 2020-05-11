@@ -42,7 +42,7 @@ namespace Practica_1
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                Console.WriteLine("\nInserte solamente numeros enteros");
+                Console.WriteLine("\nInserte solamente numeros enteros.");
             }
 
         }

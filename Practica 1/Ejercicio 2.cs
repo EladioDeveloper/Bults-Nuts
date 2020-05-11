@@ -23,9 +23,10 @@ namespace Practica_1
                     }
                     var lists = Divide(stack);
                     var matching = Matching(lists);
-                    foreach (var item in matching)
+                    int x = matching.Count;
+                    for(int i = 0; i < x;i++)
                     {
-                        Console.Write($"{item}, ");
+                        Console.Write($"{matching.Pop()}, ");
                     }
                     Console.ReadKey();
                     break;
@@ -38,7 +39,7 @@ namespace Practica_1
                 }
             }
         }
-        public List<Stack<string>> Divide(Stack<string> stack)
+        private List<Stack<string>> Divide(Stack<string> stack)
         {
             List<Stack<string>> Lists = new List<Stack<string>>();
             int midsize = stack.Count / 2;
@@ -54,7 +55,7 @@ namespace Practica_1
             }
             return Lists;
         }
-        public Stack<string> Matching(List<Stack<string>> stack)
+        private Stack<string> Matching(List<Stack<string>> stack)
         {
             int size = stack[0].Count;
             Stack<string> returnedStack = new Stack<string>();
@@ -100,7 +101,7 @@ namespace Practica_1
             }
             return returnedStack;
         }
-        public Stack<string> SelfSearch(Stack<string> stack)
+        private Stack<string> SelfSearch(Stack<string> stack)
         {
             Stack<string> returnedStack = new Stack<string>();
             Stack<string> tempStack = new Stack<string>();
